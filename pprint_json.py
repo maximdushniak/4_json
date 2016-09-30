@@ -3,13 +3,14 @@ import json
 
 def load_data(filepath):
     data = []
-    with open(filepath) as datafile:
-        data = json.loads(datafile.read())
+    with open(filepath, encoding='utf-8') as datafile:
+        data = json.load(datafile)
     return data
 
 
 def pretty_print_json(data):
-    pass
+    # json.dumps(data, sort_keys=True, indent=4)
+    print(json.dumps(data, sort_keys=True, indent=4))
 
 
 if __name__ == '__main__':
