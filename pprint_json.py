@@ -9,7 +9,6 @@ def load_data(filepath):
 
 
 def pretty_print_json(data):
-    # json.dumps(data, sort_keys=True, indent=4)
     print(json.dumps(data, sort_keys=True, indent=4, ensure_ascii=False))
 
 
