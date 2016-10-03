@@ -1,5 +1,5 @@
 import json
-
+import os
 
 def load_data(filepath):
     if not os.path.exists(filepath):
@@ -9,10 +9,10 @@ def load_data(filepath):
 
 
 def pretty_print_json(data):
-    if data is None:
-        print(data)
-    else:
+    try:
         print(json.dumps(data, sort_keys=True, indent=4, ensure_ascii=False))
+    except ValueError:
+        print(data)
 
 
 if __name__ == '__main__':
